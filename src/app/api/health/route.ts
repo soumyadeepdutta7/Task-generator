@@ -22,7 +22,10 @@ export async function GET() {
     // Check LLM
     try {
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
+        const model = genAI.getGenerativeModel(
+            { model: 'gemini-1.5-flash' },
+            { apiVersion: 'v1' }
+        );
         // Minimal generation to check connectivity
         await model.generateContent('Hello');
         health.llm = 'healthy';
