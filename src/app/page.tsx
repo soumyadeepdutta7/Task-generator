@@ -102,7 +102,7 @@ export default function Home() {
                     </div>
 
                     <Textarea
-                        label="Any constraints or risks? (Optional)"
+                        label="Any constraints or risks?"
                         placeholder="e.g. Must use Next.js, Low budget..."
                         value={formData.constraints}
                         onChange={(e) => setFormData({ ...formData, constraints: e.target.value })}
